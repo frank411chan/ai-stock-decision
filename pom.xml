@@ -26,6 +26,18 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!--引入feign客户端依赖     -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+        <!--引入hystrix依赖     -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+            <version>2.2.6.RELEASE</version>
+        </dependency>
+
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -42,6 +54,19 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+    <!-- 管理springcloud依赖 -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <!--Hoxton.RELEASE-->
+                <version>2020.0.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>
